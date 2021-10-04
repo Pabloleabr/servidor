@@ -10,7 +10,7 @@
     <?php 
     // php -S 0.0.0.0:8000 para ponerlo en pagina
         const TEST = '<h1>prueba</h1>';
-        echo TEST . " <p>hola mundo \n";
+        echo TEST . " <p>hola mundo </p>";
         $x = 0;
         unset($x);//destruye variable
         $y = isset($x) ;//comprueba si la variable existe T y si no exite o es nula  F
@@ -39,8 +39,15 @@
         $explodes =explode(" ","skljdf lksjdflj  sjadfkjsld asdf");
         print_r($explodes);
         echo implode($explodes);
-        echo "</p>";
+        echo "";
         //arrays super globales $_GET, $_POST contienen los paramatros de sus peticiones correspondientes
+        
     ?>
+    <!-- es mejor hacerlo asi que con un echo ya que separa los
+    disferentes lenguajes y las resposabilidades de frontend y backend developer-->
+    <?php if (isset($_GET['x'])) {?> 
+        <p>el valor de x es <?=// ?= equivale a ?php echo! 
+         $_GET['x']; //para lo que llega con ?x=... en el url?></p>
+    <?php } ?>
 </body>
 </html>
