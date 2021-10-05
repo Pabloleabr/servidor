@@ -45,9 +45,10 @@
     ?>
     <!-- es mejor hacerlo asi que con un echo ya que separa los
     disferentes lenguajes y las resposabilidades de frontend y backend developer-->
-    <?php if (isset($_GET['x'])) {?> 
-        <p>el valor de x es <?=// ?= equivale a ?php echo! 
-         $_GET['x']; //para lo que llega con ?x=... en el url?></p>
-    <?php } ?>
+    <?php if (isset($_GET['x'])):?> 
+        <p>el valor de x es <?=/* ?= equivale a ?php echo!*/$_GET['x']; //para lo que llega con ?x=... en el url?></p>
+    <?php endif ?>
+
+    
 </body>
 </html>

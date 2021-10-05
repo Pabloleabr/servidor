@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora simple</title>
+    
+</head>
+<body>
+    <form action="calculadora.php" method="get">
+        <span>1ºoperando:</span> <input type="number" name="o1"/><br>
+        <span>2ºoperando:</span> <input type="number" name="o2"/>
+        <select name="oprando">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br>
+        <input type="submit" value="calcular">
+    </form>
+</body>
+</html>
