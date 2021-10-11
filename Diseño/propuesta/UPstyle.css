@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(90deg,rgb(128, 58, 0),rgb(255, 115, 0));
+}
+main{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: black;
+
+}
+.User-icon img{
+    height: 150px;
+    width: 150px;
+    border: 2px;
+    border-style:solid; 
+}
+.Username-box{
+    border: 2px;
+    border-style: solid;    
+    width: 80vw;
+    background-color: bisque;
+    
+}
+.side-menu{
+    width: 10vw;
+    border: 2px;
+    border-style:solid;  
+    background-color: bisque;
+}
+.side-menu ul{
+    list-style: none;
+}
+.side-menu li{
+    margin-bottom: 4px;
+    
+}
+.side-menu li:hover{
+    background-color: #ff450044;
+}
+.side-menu a{
+    text-decoration: none;
+    color:inherit;
+    
+}
+.description-box{
+    width: 80vw;
+    border: 2px;
+    border-style: solid;  
+    height: 50vh;
+    background-color: bisque;
+}
+.game-row-container{
+    display: flex;
+}
+.game-preview-box{
+    display: grid;
+    margin: 4px;
+}
+.game-preview-box img{
+    width: 150px;
+    height: 150px;
+}
+.juegos{
+    width: 80vw;
+}
+form{
+    display: grid;
+    gap:2px;
+}
+input{
+    width: 80vw;
+}
+

@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    font-family: 'Lato', 'Roboto';
+}
+header{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 145, 0);
+}
+main{
+    padding: 30px;
+    background-color: rgb(5, 2, 14);   
+    color:white; 
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+nav li{
+    
+    padding: 10px;
+}
+nav li:hover{
+    background-color: #ffffff44;
+}
+nav a{
+    font-size: larger;
+    text-decoration: none;
+    color: black;
+}
+.search-login{
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+}
+#search-bar{
+    width: 80vw;
+    margin-right: 4px;
+    
+
+}
+.search-login button{
+    margin-left: 4px;
+}
+.search-login button:hover{
+    background-color: #FFFFFF44;
+}
+.search-login a{
+    text-decoration: none;
+    color: black;
+}
+.game-row-container{
+    display: flex;
+}
+.game-preview-box{
+    display: grid;
+    margin: 4px;
+}
+.game-preview-box img{
+    width: 150px;
+    height: 150px;
+}
