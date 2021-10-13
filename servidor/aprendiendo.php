@@ -42,12 +42,41 @@
         echo "";
         //arrays super globales $_GET, $_POST contienen los paramatros de sus peticiones correspondientes
         
+        function concat(&$x, $y){//&hace que retenga los cambios fuera de la funcion
+            $x[0] = 'm';
+            return $x . $y;
+        }
+        $c = "pepe";
+        echo "<br>" . concat($c, "hola") . "  " . $c;
+
+        //cambia los valores recibidos a los indicadicados si es posible si no te dara un error
+        function concat_garantizado(string $a,string $b): string //?string significaria que es un string que puede ser nulo
+        {//tambien estan los tipos union por ejemplo int|float
+            return $a . $b;
+        }
+
+        //require 'auxiliar.php'; te carga un fichero auxiliar
+        /*Objetos que trabajan con fechas
+        DateTimeInterface
+        DatTime
+        DateTimeImmobable
+        DateInterval
+        */
+        echo "<br/>";
+        $dti = new DateTimeImmutable();//tambien pueden no ponerse los ()
+        echo $dti->format('d-m-y');//-> es como el . de java o python
+        echo DateTime::ATOM;//acceder a constantes de classes 
+        echo "<br/>" . time();
+        echo $dti->add(new DateInterval('P1D'));
+
     ?>
     <!-- es mejor hacerlo asi que con un echo ya que separa los
     disferentes lenguajes y las resposabilidades de frontend y backend developer-->
     <?php if (isset($_GET['x'])):?> 
         <p>el valor de x es <?=/* ?= equivale a ?php echo!*/$_GET['x']; //para lo que llega con ?x=... en el url?></p>
     <?php endif ?>
+
+
 
     
 </body>
