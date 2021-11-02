@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ejer</title>
+</head>
+<body>
+  <input type="text" id="text">
+  <button id="button">pulsa</button>
+  <p>Realiza un script en el que un usuario introduzca una frase (esta pueda contener todo tipo de
+    caracteres), ir mostrando todos los caracteres uno a uno, excepto si es un número que lo obviará.
+    Usa el método charAt( )</p><br>
+
+    <script>
+      const b = document.getElementById("button");
+      b.onclick = () =>{
+        let res = "";
+        const text = document.getElementById("text").value;
+/*         for (let letra of text) {
+          res += isNaN(letra) ? letra : ""; 
+        } */
+        for (let index in text){
+          res += isNaN(text.charAt(index)) ? text.charAt(index) : ""; 
+        }
+        alert(res);
+      }
+
+    </script>
+</body>
+</html>

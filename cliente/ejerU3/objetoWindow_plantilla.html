@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UT3 Objeto Window</title>
+    </head>
+
+    <body>
+
+        <h1>El BOM</h1>
+        <h2>El objeto Window</h2>
+
+        <p id="parrafo"></p>
+
+        <iframe id="fr1" src="https://html.spec.whatwg.org/multipage/window-object.html" width="40%" height="150"></iframe>
+        <iframe src="https://wikipedia.com" width="40%" height="150"></iframe>
+
+        <p id="ifr"></p>
+
+        <button id="boton1" onclick="crearVentana()">Crear Ventana</button>
+        <button id="boton2" onclick="cerrarVentana()">Cerrar Ventana</button>
+        <button id="boton3" onclick="redimensionarVentana()">Resize Ventana</button>
+        <button id="boton4" onclick="moverVentana()">Mover Ventana</button>
+        <button id="boton5" onclick="retardoVentana()">Alert 3s</button>
+        <button id="boton6" onclick="quitarRetardo()">Clear Retardo</button>
+        <button id="boton7" onclick="intervaloReloj()">Intervalo</button>
+        <button id="boton8" onclick="quitarIntervalo()">Clear Int</button>
+
+
+        <p id = "ventanas"></p>
+      
+        <p id = "reloj"></p>
+
+        <script>
+      
+         //PROPIEDADES BÁSICAS DEL OBJETO WINDOW    
+        
+            objWindow();            //Llamo a la función antes para que muestre info antes de evento
+
+            function objWindow() { 
+                cadena = "";
+                window.name = "mi ventana";
+                let p = document.getElementById("parrafo")
+                cadena += "Nombre: " + window.name;
+                cadena += "<br>Alto extremo: " + window.outerHeight;
+                cadena += "<br>largo externo:" + window.outerWidth; 
+                cadena += "<br>Alto interno: " + window.innerHeight;
+                cadena += "<br>largo interno:" + window.innerWidth; 
+                cadena += "<br>Scroll horizontal:" + window.scrollY + " Scrollvertical: " + window.scrollX;
+                p.innerHTML = cadena;
+                cadena = "num de frames en la pagina: " + window.frames.length;
+                cadena += "<br>la pagina actual no esta insertanda en un frame. frameElement devuelve:" + window.frameElement;
+                cadena += "<br>el src del iframe 1 es: " + window.frames[0].location + "<br> el segundo es: " +  window.frames[1].location;
+                cadena += "<br>el width del frame 1 es: " + (window.frames[0].innerWidth/window.innerWidth).toFixed(2)*100 + "%"
+                
+                
+                document.getElementById("ifr").innerHTML = cadena;
+
+            }   
+
+            window.onresize = objWindow;
+           
+            
+        //  PROPIEDADES DE IFRAMES
+      
+
+
+        //METODOS DEL OBJETO WINDOW Y PROPIEDADES DE OTRAS VENTANAS
+
+            let ventanaNueva;
+
+            function crearVentana(){
+               
+            }
+
+            function cerrarVentana(){
+              
+            }
+
+            function redimensionarVentana(){
+               
+            }
+
+            function moverVentana(){
+               
+            }
+
+        //MÉTODOS DE INSTRUCCIONES DE TIEMPO    
+
+            function saludo(){
+               
+            }
+
+                      
+            function retardoVentana(){
+               
+            }
+
+            function quitarRetardo(){
+               
+            }
+
+           
+            function reloj(){
+               
+            }
+
+            function intervaloReloj(){
+               
+            }
+
+            function quitarIntervalo(){
+               
+            }
+
+        </script>
+
+    </body>
+     
+</html>

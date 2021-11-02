@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Solicitar una frase desde teclado, almacenar cada palabra en un array y mostrar los siguientes
+    datos:
+    ● La primera palabra de la frase
+    ● La ultima palabra de la frase
+    ● El número de palabras de la frase</p>
+  <input type="text" id="text">
+  <button id="button">pulsa</button>
+  
+    <script>
+      const b = document.getElementById("button");
+      b.onclick = () =>{
+        let res = "";
+        const text = document.getElementById("text").value.split(" ");
+        res += "la primera palabra es " + text[0] + "\n";
+        res += "la primera ultima palabra es " + text[text.length-1] + "\n";
+        res += "el num palabras es: " + text.length + "\n";
+        alert(res);
+      }
+
+    </script>
+</body>
+</html>

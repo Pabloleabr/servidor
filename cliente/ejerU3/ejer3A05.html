@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let naci = new Date(1999,06,19);
+    let current = new Date();
+    console.log(current)
+    alert("tengo : " + (current.getFullYear() - naci.getFullYear())
+          + " años, " + Math.abs(current.getMonth() - naci.getMonth()) + " meses, y "
+          +  Math.abs(current.getDate() - naci.getDate()) + "dias");
+  </script>
+</body>
+</html>
