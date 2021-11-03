@@ -50,12 +50,13 @@
                 cadena += "<br>largo interno:" + window.innerWidth; 
                 cadena += "<br>Scroll horizontal:" + window.scrollY + " Scrollvertical: " + window.scrollX;
                 p.innerHTML = cadena;
+                //reutilizo la varible resetenadola con =
                 cadena = "num de frames en la pagina: " + window.frames.length;
                 cadena += "<br>la pagina actual no esta insertanda en un frame. frameElement devuelve:" + window.frameElement;
                 cadena += "<br>el src del iframe 1 es: " + window.frames[0].location + "<br> el segundo es: " +  window.frames[1].location;
-                cadena += "<br>el width del frame 1 es: " + (window.frames[0].innerWidth/window.innerWidth).toFixed(2)*100 + "%"
-                
-                
+                cadena += "<br>el width del frame 1 es: " + (window.frames[0].innerWidth/window.innerWidth).toFixed(2)*100 + "%";
+                cadena += "<br>el padre de frame 2 es: " + window.frames[1].frameElement;
+
                 document.getElementById("ifr").innerHTML = cadena;
 
             }   
@@ -66,53 +67,57 @@
         //  PROPIEDADES DE IFRAMES
       
 
-
+            
         //METODOS DEL OBJETO WINDOW Y PROPIEDADES DE OTRAS VENTANAS
 
             let ventanaNueva;
 
             function crearVentana(){
-               
+                ventanaNueva = window.open("", "ventanaNueva", "width=200, height=100");
             }
 
             function cerrarVentana(){
-              
+              ventanaNueva.close();
             }
 
             function redimensionarVentana(){
-               
+                ventanaNueva.resizeBy(200,200);
+                ventanaNueva.focus();
+                //no funciona no se por que
             }
 
             function moverVentana(){
-               
+               ventanaNueva.moveBy(20,20);
+               ventanaNueva.focus();
             }
 
         //MÉTODOS DE INSTRUCCIONES DE TIEMPO    
 
             function saludo(){
-               
+                alert("hola")
             }
 
-                      
+             let retardo;         
             function retardoVentana(){
-               
+               retardo = setTimeout(saludo,3000);
             }
 
             function quitarRetardo(){
-               
+               clearTimeout(retardo);
             }
 
            
-            function reloj(){
-               
+            function reloj(){//lo muestro en el titulo
+               document.title = new Date().getSeconds()
             }
 
+            let inter;
             function intervaloReloj(){
-               
+                inter = setInterval(reloj, 1000);
             }
 
             function quitarIntervalo(){
-               
+               clearInterval(inter);
             }
 
         </script>

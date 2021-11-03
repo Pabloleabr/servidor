@@ -18,12 +18,13 @@
       b.onclick = () =>{
         let res = "";
         const text = document.getElementById("text").value;
-/*         for (let letra of text) {
+/*      for (let letra of text) {
           res += isNaN(letra) ? letra : ""; 
         } */
         for (let index in text){
           res += isNaN(text.charAt(index)) ? text.charAt(index) : ""; 
         }
+        //hecho de las dos formas pero mostrando por alert solo el del in
         alert(res);
       }
 

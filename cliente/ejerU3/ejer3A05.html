@@ -11,6 +11,8 @@
     let naci = new Date(1999,06,19);
     let current = new Date();
     console.log(current)
+    /*en este caso la resta getFullYear no seria precisa y tendria que añadirse una comprobacion de meses
+    para ver si has cumplido ya los años este año y restarte uno si no lo has hecho */
     alert("tengo : " + (current.getFullYear() - naci.getFullYear())
           + " años, " + Math.abs(current.getMonth() - naci.getMonth()) + " meses, y "
           +  Math.abs(current.getDate() - naci.getDate()) + "dias");

@@ -15,8 +15,10 @@
     for(obj in navigator){
       let li = document.createElement("li");
       li.innerText = obj + ":" + navigator[obj];
-      list.append(li);
+      list.append(li);//se añade el elemento creado con notacion (key:valor)
+      // en el caso de ser plugins este tambien se recorre y muestra sus elementos
       if(obj === "plugins"){
+        //creo otra lista dentro para los plugins
         let ul = document.createElement("ul");
         for(let x in navigator[obj]){
           console.log(x);
@@ -25,7 +27,6 @@
           ul.append(liPlu);
         }
         list.append(ul);
-
       }
     }
   </script>
