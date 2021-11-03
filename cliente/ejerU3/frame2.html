@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="cambiar">Cambiar color</button>
+</body>
+<script>
+  const b = document.getElementById("cambiar");
+  b.onclick = () => {
+    //cojo los values de los botones del iframe1
+    let selectedWindow = window.parent.frames[0].document.getElementById("window").value;
+    let selectedColor = window.parent.frames[0].document.getElementById("color").value;
+    //te asigna el iframe seleccionado
+    let bd = window.parent.frames[selectedWindow].document.querySelector("body");
+    //logeo para visualizar lo que me esta cogiendo
+    console.log(selectedColor);
+    console.log(selectedWindow);
+    console.log(bd);
+    //le aplico el cambio
+    bd.style = `background-color: ${selectedColor};`
+  }
+</script>
+</html>
