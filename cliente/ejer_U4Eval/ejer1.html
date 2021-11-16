@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ejer 1</title>
+</head>
+<body>
+  <script>
+    ar = [];
+    for(x = 1; x<22; x++){
+      if(x%2 != 0 ){ar.push(x);}
+    }
+    console.log(ar);
+    //a
+    alert("el sumatorio es: " + ar.reduce((x,y) => x + y));
+    //b
+    alert("el orden inverso es: " + ar.reverse());
+    //c
+    let check = prompt("escribe un numero para comprobar si esta dentro del array: ");
+    let acierto = false;
+    for (const i in ar) {
+      if(ar[i] == parseInt(check)){
+        acierto = true;
+        alert("correcto ese numero esta dentro del array en la posicion: " + i);
+        //d
+        delete ar[i];
+        ar.sort();
+        ar.pop();
+        break;
+      }
+    }
+    if (!acierto) {
+      alert("ese numero no esta dentro del array");
+    }
+    //e
+    ar.sort((a,b)=>a-b);//ascendente
+    alert(ar);
+    ar.sort((a,b)=>b-a);//descendente
+    alert(ar)
+  </script>
+</body>
+</html>
