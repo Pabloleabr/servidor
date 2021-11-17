@@ -7,8 +7,9 @@
     <title>ejer5</title>
 </head>
 <body>
-
+    <p id="texto"></p>
     <script>
+        const p = document.getElementById("texto");
         //a
         class Vehiculo{
             constructor(marca, modelo, color, fecha){
@@ -17,11 +18,39 @@
                 this.color = color;
                 this.fecha = fecha;
             }
-
+            mostrarDatos(){//e le puesto esto por que como no definia qu tenia que hacer es lo que me parecia que tenia sentido
+                p.innerHTML += "<br>" + this.color + " " + this.fecha + " " + this.marca + " " + this.modelo;
+            }
+            acelerar(v){//f
+                p.innerHTML += "<br>Se ha acelerado a " + v;
+            }
+            arrancar(){//g
+                p.innerHTML += "<br>El coche de color_" + this.color + ", marca_" + this.marca + ", modelo_" + this.modelo + " ha a arrancado";
+            }
+            frenar(){//i
+                p.innerHTML += "<br>El coche de color_" + this.color + ", marca_" + this.marca + ", modelo_" + this.modelo + " ha a frenado";
+            }
         }
         //b
         let maclaren = new Vehiculo("maclaren", "nidea", "azul", "20-12-2006");
         let toyota = new Vehiculo("toyota", "nidea", "rojo", "24-02-2016");
+
+        p.innerHTML += maclaren.marca;//c
+        p.innerHTML += "<br>" + toyota['color'];//d
+
+        toyota.mostrarDatos();
+        maclaren.acelerar("100km/h");
+        maclaren.arrancar();
+        toyota.frenar();
+
+        Object.defineProperties(maclaren, {marca: {writable: false}});//preguntar
+
+        //j
+        for (let trait in maclaren) {// el Object keys me devolveria sus llaves pero no lo he visto necesario ya que con el for in ya me las da
+            if (maclaren.hasOwnProperty(trait)) {
+                p.innerHTML += "<br>" +  trait + "_" + maclaren[trait];
+            }
+        }
     </script>
 </body>
 </html>
