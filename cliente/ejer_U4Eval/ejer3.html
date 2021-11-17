@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ejer 3</title>
+</head>
+<body>
+  <p id="text" style="font-size: large;"></p>
+
+  <script>
+    const p = document.getElementById("text");
+    let nums = [24, 555, 56, 23, 12];
+    p.innerText="El numsay es: " + nums;
+    p.innerText+= "\n¿Son todos enteros y positivos? " + nums.every((a)=> a >= 0 && Number.isInteger(a));
+    p.innerText+= "\nEl triple de los número del array: " + nums.map((a) => a * 3)
+    p.innerText+= "\nLa multiplicación de todos los números es: " + nums.reduce((a,b)=> a * b)
+  </script>
+</body>
+</html>

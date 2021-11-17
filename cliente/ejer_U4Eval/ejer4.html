@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer4</title>
+</head>
+<body>
+    <p id="text" style="font-size: large;"></p>
+    <script>
+        const p = document.getElementById("text");
+        let frase = prompt("Introduce una frase").split("");//a
+        console.log(frase);
+        frase = frase.filter((a) => /^([A-Z])| $/i.test(a));//b
+        p.innerHTML ="la frase sin numeros: ";
+
+        let inter = setInterval(()=>{//c
+            p.innerHTML += frase.shift();
+        },500)
+        //una vez terminada la frase paramos de escribir
+        setTimeout(() => clearInterval(inter), 500*frase.length)
+
+        setInterval(()=>{//d
+            if(/\|/.test(p.innerHTML)){//comprueba si ya exite la barra y la borra
+                p.innerHTML = p.innerHTML.split("").filter((a) => a !== "|").join("");
+            }
+            else{//pone la barra en caso de que no este ya
+                p.innerHTML += "|";
+            }
+        },500)//hay que pone timepo al mismo o la mitad para que quede bien
+    </script>
+</body>
+</html>

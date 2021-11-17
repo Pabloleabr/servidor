@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ejer 2</title>
+</head>
+<body>
+  <script>
+    let frase = prompt("Introduce una frase").split(' ');
+    let sol = window.open('about:blank', 'sol');
+    sol.document.querySelector("body").innerText += ('Las palabras son: ' + frase);
+    sol.document.querySelector("body").innerText += ('\nLas palabras al revés son: ' + frase.reverse());
+    sol.document.querySelector("body").innerText += ('\nLa primera palabra es: ' + frase.reverse()[0]);
+    sol.document.querySelector("body").innerText += ('\nLa última palabra es: ' + frase[frase.length-1]);
+    sol.document.querySelector("body").innerText += ('\nLas palabras ordenadas a-z son: '+ frase.sort())
+    sol.document.querySelector("body").innerText += ('\nLas palabras ordenadas z-a son: '+ frase.reverse())//a-z de revés es z-a
+    
+  </script>
+</body>
+</html>
