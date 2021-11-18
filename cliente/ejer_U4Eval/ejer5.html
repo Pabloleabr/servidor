@@ -12,6 +12,7 @@
         const p = document.getElementById("texto");
         //a
         class Vehiculo{
+            cilindrada;//h como no dice nada mas, no le he asignado ningun valor
             constructor(marca, modelo, color, fecha){
                 this.marca = marca;
                 this.modelo = modelo;
@@ -43,14 +44,19 @@
         maclaren.arrancar();
         toyota.frenar();
 
-        Object.defineProperties(maclaren, {marca: {writable: false}});//preguntar
-
+        
         //j
         for (let trait in maclaren) {// el Object keys me devolveria sus llaves pero no lo he visto necesario ya que con el for in ya me las da
             if (maclaren.hasOwnProperty(trait)) {
                 p.innerHTML += "<br>" +  trait + "_" + maclaren[trait];
             }
         }
-    </script>
+        Object.defineProperties(maclaren, {marca: {enumerable: false}}, {mostrarDatos: {enumerable: false}},
+        {acelerar: {enumerable: false}}, {frenar: {enumerable: false}}, {arrancar: {enumerable: false}});//k
+
+        //aqui posemos ver como el maclaren ya no muestra la marca
+        console.log(Object.keys(maclaren));
+        console.log(Object.keys(toyota));
+        </script>
 </body>
 </html>
